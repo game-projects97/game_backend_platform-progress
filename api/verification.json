@@ -1,0 +1,25 @@
+{
+  "verified_at": "2026-11-10T04:16:31Z",
+  "cargo_command": "cargo test --locked --offline --manifest-path server/Cargo.toml",
+  "rust_tests_passed": 424,
+  "rust_tests_failed": 0,
+  "rust_test_result_groups": 51,
+  "http_requests": 120,
+  "http_unexpected_failures": 0,
+  "http_documented_operations_exercised": 120,
+  "openapi_checks": [
+    "JSON/YAML round-trip equality",
+    "all local schema references resolve",
+    "JSON Schema Draft 2020-12 structure",
+    "unique operationId",
+    "path parameters match templates",
+    "recorded request/response fixtures validate against documented schemas"
+  ],
+  "not_verified": [
+    "all 205 operations individually over live HTTP",
+    "production performance or SLO",
+    "complete fixed response schemas for SDK generation",
+    "production backend deployment"
+  ],
+  "fixture_correction": "First isolated probe used a group name with spaces and received expected validation rule 422 invalid_group_name. Fixture changed to permitted ASCII alphanumeric/hyphen format. Final 120-request run has no unexpected failures."
+}

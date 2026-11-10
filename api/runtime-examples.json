@@ -1,0 +1,2879 @@
+{
+  "scope": "isolated temporary database; generated test identities; secret values redacted",
+  "timestamp": "2026-11-10T04:16:31Z",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "15"
+      },
+      "response": {
+        "status": "ok"
+      },
+      "response_body_bytes": 15
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/login",
+      "request": {
+        "username": "api_docs_admin",
+        "password": "<redacted-test-secret>"
+      },
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "61"
+      },
+      "response": {
+        "id": "c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
+        "is_owner": true
+      },
+      "response_body_bytes": 61
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/me",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "89"
+      },
+      "response": {
+        "id": "c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
+        "is_owner": true,
+        "username": "api_docs_admin"
+      },
+      "response_body_bytes": 89
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/projects",
+      "request": {
+        "name": "API reference fixture"
+      },
+      "status": 201,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "76"
+      },
+      "response": {
+        "id": "3e8e8d39-50a4-42d9-83c9-e0888d929ff5",
+        "name": "API reference fixture"
+      },
+      "response_body_bytes": 76
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "107"
+      },
+      "response": {
+        "items": [
+          {
+            "id": "3e8e8d39-50a4-42d9-83c9-e0888d929ff5",
+            "name": "API reference fixture"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 107
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/environments",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "86"
+      },
+      "response": {
+        "items": [
+          {
+            "name": "development",
+            "role": "owner"
+          },
+          {
+            "name": "production",
+            "role": "owner"
+          }
+        ]
+      },
+      "response_body_bytes": 86
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/bootstrap?client_version=1.0.0",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "254"
+      },
+      "response": {
+        "environment": "development",
+        "maintenance_active": false,
+        "maintenance_message": "",
+        "minimum_version": "0.0.0",
+        "policy_revision": 0,
+        "project_id": "3e8e8d39-50a4-42d9-83c9-e0888d929ff5",
+        "recommended_version": "0.0.0",
+        "update_url": "",
+        "version_status": "supported"
+      },
+      "response_body_bytes": 254
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/game/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/guests",
+      "request": {},
+      "status": 201,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "132"
+      },
+      "response": {
+        "credential": "<redacted-test-secret>",
+        "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615"
+      },
+      "response_body_bytes": 132
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/game/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/sessions",
+      "request": {
+        "credential": "<redacted-test-secret>",
+        "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615"
+      },
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "100"
+      },
+      "response": {
+        "expires_at": 1794287791,
+        "token": "<redacted-test-secret>"
+      },
+      "response_body_bytes": 100
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/me",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "140"
+      },
+      "response": {
+        "environment": "development",
+        "id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+        "kind": "guest",
+        "project_id": "3e8e8d39-50a4-42d9-83c9-e0888d929ff5"
+      },
+      "response_body_bytes": 140
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/profile",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "98"
+      },
+      "response": {
+        "nickname": null,
+        "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+        "updated_at": null,
+        "version": 0
+      },
+      "response_body_bytes": 98
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/progress",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "74"
+      },
+      "response": {
+        "progress": {
+          "intro_seen": false,
+          "schema_version": 1,
+          "stage": 1
+        },
+        "version": 0
+      },
+      "response_body_bytes": 74
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/game/profile",
+      "request": {
+        "request_id": "a63b287b-21d3-4d36-975b-1d2ff197ef58",
+        "expected_version": 0,
+        "nickname": "api_doc_player"
+      },
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "116"
+      },
+      "response": {
+        "nickname": "api_doc_player",
+        "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+        "updated_at": 1794284191,
+        "version": 1
+      },
+      "response_body_bytes": 116
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/game/progress",
+      "request": {
+        "request_id": "02d83e58-40e9-4a49-9242-e7ec3a847bbc",
+        "expected_version": 0,
+        "progress": {
+          "schema_version": 1,
+          "stage": 2,
+          "intro_seen": true
+        }
+      },
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "73"
+      },
+      "response": {
+        "progress": {
+          "intro_seen": true,
+          "schema_version": 1,
+          "stage": 2
+        },
+        "version": 1
+      },
+      "response_body_bytes": 73
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/players",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "115"
+      },
+      "response": {
+        "items": [
+          {
+            "created_at": 1794284191,
+            "id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "kind": "guest"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 115
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/players/profiles",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "143"
+      },
+      "response": {
+        "items": [
+          {
+            "created_at": 1794284191,
+            "id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "kind": "guest",
+            "nickname": "api_doc_player"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 143
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/players/1be2cdc8-6baa-449b-ae80-036be49fd615/profile",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "116"
+      },
+      "response": {
+        "nickname": "api_doc_player",
+        "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+        "updated_at": 1794284191,
+        "version": 1
+      },
+      "response_body_bytes": 116
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/players/1be2cdc8-6baa-449b-ae80-036be49fd615/progress",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "73"
+      },
+      "response": {
+        "progress": {
+          "intro_seen": true,
+          "schema_version": 1,
+          "stage": 2
+        },
+        "version": 1
+      },
+      "response_body_bytes": 73
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/players/1be2cdc8-6baa-449b-ae80-036be49fd615/access",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "133"
+      },
+      "response": {
+        "blocked": false,
+        "blocked_until": null,
+        "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+        "reason": null,
+        "updated_at": null,
+        "version": 0
+      },
+      "response_body_bytes": 133
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/players/1be2cdc8-6baa-449b-ae80-036be49fd615/withdrawal",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "174"
+      },
+      "response": {
+        "cancel_until": null,
+        "delete_after": null,
+        "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+        "reason": null,
+        "requested_at": null,
+        "updated_at": null,
+        "version": 0,
+        "withdrawn": false
+      },
+      "response_body_bytes": 174
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/policy",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "195"
+      },
+      "response": {
+        "maintenance_enabled": false,
+        "maintenance_ends_at": null,
+        "maintenance_message": "",
+        "maintenance_starts_at": null,
+        "minimum_version": "0.0.0",
+        "recommended_version": "0.0.0",
+        "revision": 0,
+        "update_url": ""
+      },
+      "response_body_bytes": 195
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/events",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "31"
+      },
+      "response": {
+        "items": [],
+        "next_cursor": null
+      },
+      "response_body_bytes": 31
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/friends/policy",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "68"
+      },
+      "response": {
+        "max_friends": 0,
+        "max_incoming": 100,
+        "max_outgoing": 100,
+        "revision": 0
+      },
+      "response_body_bytes": 68
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/friends/players/1be2cdc8-6baa-449b-ae80-036be49fd615",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "31"
+      },
+      "response": {
+        "items": [],
+        "next_cursor": null
+      },
+      "response_body_bytes": 31
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/groups",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "136"
+      },
+      "response": {
+        "items": [
+          {
+            "created_at": 0,
+            "id": "00000000-0000-0000-0000-000000000000",
+            "is_default": true,
+            "name": "NULL",
+            "revision": 1
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 136
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/guilds",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "31"
+      },
+      "response": {
+        "items": [],
+        "next_cursor": null
+      },
+      "response_body_bytes": 31
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/guilds/policy",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "42"
+      },
+      "response": {
+        "inactive_master_days": null,
+        "revision": 0
+      },
+      "response_body_bytes": 42
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/friends/policy",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "68"
+      },
+      "response": {
+        "max_friends": 0,
+        "max_incoming": 100,
+        "max_outgoing": 100,
+        "revision": 0
+      },
+      "response_body_bytes": 68
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/friends",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "31"
+      },
+      "response": {
+        "items": [],
+        "next_cursor": null
+      },
+      "response_body_bytes": 31
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/group",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "115"
+      },
+      "response": {
+        "group_id": "00000000-0000-0000-0000-000000000000",
+        "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+        "revision": 0
+      },
+      "response_body_bytes": 115
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/guilds",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "31"
+      },
+      "response": {
+        "items": [],
+        "next_cursor": null
+      },
+      "response_body_bytes": 31
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/guilds/me",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "37"
+      },
+      "response": {
+        "applications": [],
+        "membership": null
+      },
+      "response_body_bytes": 37
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/guilds/policy",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "42"
+      },
+      "response": {
+        "inactive_master_days": null,
+        "revision": 0
+      },
+      "response_body_bytes": 42
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/activity",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "80"
+      },
+      "response": {
+        "last_active_at": 1794284191,
+        "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615"
+      },
+      "response_body_bytes": 80
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/game/activity",
+      "request": {},
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "80"
+      },
+      "response": {
+        "last_active_at": 1794284191,
+        "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615"
+      },
+      "response_body_bytes": 80
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/assets",
+      "request": {
+        "name": "API coin",
+        "kind": "currency"
+      },
+      "status": 201,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "81"
+      },
+      "response": {
+        "id": "d71ed461-b772-4ca9-a660-e48d11317482",
+        "kind": "currency",
+        "name": "API coin"
+      },
+      "response_body_bytes": 81
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/assets",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "112"
+      },
+      "response": {
+        "items": [
+          {
+            "id": "d71ed461-b772-4ca9-a660-e48d11317482",
+            "kind": "currency",
+            "name": "API coin"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 112
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/players/1be2cdc8-6baa-449b-ae80-036be49fd615/grants",
+      "request": {
+        "request_id": "c3fbee7b-c1fc-4564-b146-3a989d7844e8",
+        "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+        "amount": 1000,
+        "reason": "API contract fixture"
+      },
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "139"
+      },
+      "response": {
+        "amount": 1000,
+        "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+        "balance": 1000,
+        "business_id": "grant:c3fbee7b-c1fc-4564-b146-3a989d7844e8"
+      },
+      "response_body_bytes": 139
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/players/1be2cdc8-6baa-449b-ae80-036be49fd615/wallet",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "133"
+      },
+      "response": {
+        "items": [
+          {
+            "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+            "balance": 1000,
+            "kind": "currency",
+            "name": "API coin"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 133
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/wallet",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "133"
+      },
+      "response": {
+        "items": [
+          {
+            "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+            "balance": 1000,
+            "kind": "currency",
+            "name": "API coin"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 133
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/players/1be2cdc8-6baa-449b-ae80-036be49fd615/mail",
+      "request": {
+        "request_id": "33de656e-81a2-46ad-9cdc-641c53d39b99",
+        "subject": "Fixture reward",
+        "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+        "amount": 5,
+        "expires_at": 1794287791,
+        "reason": "API fixture"
+      },
+      "status": 201,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "45"
+      },
+      "response": {
+        "id": "33de656e-81a2-46ad-9cdc-641c53d39b99"
+      },
+      "response_body_bytes": 45
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/mail",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "257"
+      },
+      "response": {
+        "items": [
+          {
+            "amount": 5,
+            "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+            "claimed_at": null,
+            "expires_at": 1794287791,
+            "id": "33de656e-81a2-46ad-9cdc-641c53d39b99",
+            "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "subject": "Fixture reward"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 257
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/mail",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "257"
+      },
+      "response": {
+        "items": [
+          {
+            "amount": 5,
+            "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+            "claimed_at": null,
+            "expires_at": 1794287791,
+            "id": "33de656e-81a2-46ad-9cdc-641c53d39b99",
+            "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "subject": "Fixture reward"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 257
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/game/mail/33de656e-81a2-46ad-9cdc-641c53d39b99/claim",
+      "request": {},
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "135"
+      },
+      "response": {
+        "amount": 5,
+        "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+        "balance": 1005,
+        "business_id": "mail:33de656e-81a2-46ad-9cdc-641c53d39b99"
+      },
+      "response_body_bytes": 135
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/coupons",
+      "request": {
+        "request_id": "52d36529-f1d1-4362-bb2c-1ce50532d7d7",
+        "code": "APIDOCS",
+        "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+        "amount": 5,
+        "expires_at": 1794287791,
+        "max_redemptions": 10
+      },
+      "status": 201,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "62"
+      },
+      "response": {
+        "code": "APIDOCS",
+        "id": "52d36529-f1d1-4362-bb2c-1ce50532d7d7"
+      },
+      "response_body_bytes": 62
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/coupons",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "215"
+      },
+      "response": {
+        "items": [
+          {
+            "amount": 5,
+            "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+            "code": "APIDOCS",
+            "expires_at": 1794287791,
+            "id": "52d36529-f1d1-4362-bb2c-1ce50532d7d7",
+            "max_redemptions": 10,
+            "redemptions": 0
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 215
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/game/coupons/redeem",
+      "request": {
+        "code": "APIDOCS"
+      },
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "137"
+      },
+      "response": {
+        "amount": 5,
+        "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+        "balance": 1010,
+        "business_id": "coupon:52d36529-f1d1-4362-bb2c-1ce50532d7d7"
+      },
+      "response_body_bytes": 137
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/ledger",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "1048"
+      },
+      "response": {
+        "items": [
+          {
+            "actor": "player:1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "amount": 5,
+            "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+            "balance_after": 1010,
+            "business_id": "coupon:52d36529-f1d1-4362-bb2c-1ce50532d7d7",
+            "created_at": 1794284191,
+            "id": 3,
+            "line_index": 0,
+            "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "reason": "coupon:52d36529-f1d1-4362-bb2c-1ce50532d7d7"
+          },
+          {
+            "actor": "player:1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "amount": 5,
+            "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+            "balance_after": 1005,
+            "business_id": "mail:33de656e-81a2-46ad-9cdc-641c53d39b99",
+            "created_at": 1794284191,
+            "id": 2,
+            "line_index": 0,
+            "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "reason": "mail:33de656e-81a2-46ad-9cdc-641c53d39b99"
+          },
+          {
+            "actor": "c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
+            "amount": 1000,
+            "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+            "balance_after": 1000,
+            "business_id": "grant:c3fbee7b-c1fc-4564-b146-3a989d7844e8",
+            "created_at": 1794284191,
+            "id": 1,
+            "line_index": 0,
+            "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "reason": "API contract fixture"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 1048
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/content",
+      "request": {
+        "kind": "notice",
+        "key": "docs",
+        "locale": "en",
+        "body": {
+          "title": "Fixture notice",
+          "body": "Internal contract sample"
+        }
+      },
+      "status": 201,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "88"
+      },
+      "response": {
+        "draft_revision": 1,
+        "id": "9f360de2-8df4-451e-8b35-4060a15dd31f",
+        "publication_version": 0
+      },
+      "response_body_bytes": 88
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/content",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "188"
+      },
+      "response": {
+        "items": [
+          {
+            "draft_revision": 1,
+            "id": "9f360de2-8df4-451e-8b35-4060a15dd31f",
+            "key": "docs",
+            "kind": "notice",
+            "locale": "en",
+            "publication_version": 0,
+            "published_revision": null
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 188
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/content/9f360de2-8df4-451e-8b35-4060a15dd31f",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "380"
+      },
+      "response": {
+        "draft": {
+          "body": "Internal contract sample",
+          "title": "Fixture notice"
+        },
+        "item": {
+          "draft_revision": 1,
+          "id": "9f360de2-8df4-451e-8b35-4060a15dd31f",
+          "key": "docs",
+          "kind": "notice",
+          "locale": "en",
+          "publication_version": 0,
+          "published_revision": null
+        },
+        "next_revision_cursor": null,
+        "versions": [
+          {
+            "actor": "c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
+            "created_at": 1794284191,
+            "published": false,
+            "revision": 1
+          }
+        ]
+      },
+      "response_body_bytes": 380
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/content/9f360de2-8df4-451e-8b35-4060a15dd31f/versions",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "134"
+      },
+      "response": {
+        "items": [
+          {
+            "actor": "c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
+            "created_at": 1794284191,
+            "published": false,
+            "revision": 1
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 134
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/content/9f360de2-8df4-451e-8b35-4060a15dd31f/publish",
+      "request": {
+        "expected_publication_version": 0,
+        "revision": 1,
+        "reason": "API fixture"
+      },
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "376"
+      },
+      "response": {
+        "draft": {
+          "body": "Internal contract sample",
+          "title": "Fixture notice"
+        },
+        "item": {
+          "draft_revision": 1,
+          "id": "9f360de2-8df4-451e-8b35-4060a15dd31f",
+          "key": "docs",
+          "kind": "notice",
+          "locale": "en",
+          "publication_version": 1,
+          "published_revision": 1
+        },
+        "next_revision_cursor": null,
+        "versions": [
+          {
+            "actor": "c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
+            "created_at": 1794284191,
+            "published": true,
+            "revision": 1
+          }
+        ]
+      },
+      "response_body_bytes": 376
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/content/notice?locale=en",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "etag": "\"04963503c24962906e1b4e8b7c052922c5e581f7853c8c9773dc645455c91e8b\"",
+        "cache-control": "private, no-cache",
+        "vary": "Authorization, X-Client-Version",
+        "content-length": "224"
+      },
+      "response": {
+        "items": [
+          {
+            "body": {
+              "body": "Internal contract sample",
+              "title": "Fixture notice"
+            },
+            "id": "9f360de2-8df4-451e-8b35-4060a15dd31f",
+            "key": "docs",
+            "kind": "notice",
+            "locale": "en",
+            "publication_version": 1,
+            "revision": 1
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 224
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/events?locale=en",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "31"
+      },
+      "response": {
+        "items": [],
+        "next_cursor": null
+      },
+      "response_body_bytes": 31
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/groups",
+      "request": {
+        "request_id": "eef61722-6794-4940-b1b1-83b6f6eff9ca",
+        "name": "FixtureGroup",
+        "reason": "API fixture"
+      },
+      "status": 201,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "123"
+      },
+      "response": {
+        "created_at": 1794284191,
+        "id": "329c218a-1e7f-4135-b54e-2a17fae3fc95",
+        "is_default": false,
+        "name": "FixtureGroup",
+        "revision": 1
+      },
+      "response_body_bytes": 123
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/groups/329c218a-1e7f-4135-b54e-2a17fae3fc95",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "156"
+      },
+      "response": {
+        "created_at": 1794284191,
+        "guild_count": 0,
+        "id": "329c218a-1e7f-4135-b54e-2a17fae3fc95",
+        "is_default": false,
+        "name": "FixtureGroup",
+        "player_count": 0,
+        "revision": 1
+      },
+      "response_body_bytes": 156
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/groups/merges",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "31"
+      },
+      "response": {
+        "items": [],
+        "next_cursor": null
+      },
+      "response_body_bytes": 31
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/game/guilds",
+      "request": {
+        "request_id": "4d964fee-4ea3-4928-8269-a9caf68390c1",
+        "name": "APIFixtureGuild",
+        "country": "KR",
+        "admission": "open",
+        "capacity": 10,
+        "metadata": {}
+      },
+      "status": 201,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "472"
+      },
+      "response": {
+        "guild": {
+          "access": "public",
+          "admission": "open",
+          "capacity": 10,
+          "closed_at": null,
+          "country": "KR",
+          "created_at": 1794284191,
+          "group_id": "00000000-0000-0000-0000-000000000000",
+          "id": "6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f",
+          "master_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+          "member_count": 1,
+          "metadata": {},
+          "name": "APIFixtureGuild",
+          "pending_count": 0,
+          "revision": 1
+        },
+        "participant": {
+          "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+          "role": "master",
+          "since_at": 1794284191,
+          "state": "member"
+        }
+      },
+      "response_body_bytes": 472
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/guilds/6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "340"
+      },
+      "response": {
+        "access": "public",
+        "admission": "open",
+        "capacity": 10,
+        "closed_at": null,
+        "country": "KR",
+        "created_at": 1794284191,
+        "group_id": "00000000-0000-0000-0000-000000000000",
+        "id": "6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f",
+        "master_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+        "member_count": 1,
+        "metadata": {},
+        "name": "APIFixtureGuild",
+        "pending_count": 0,
+        "revision": 1
+      },
+      "response_body_bytes": 340
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/guilds/6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f/members",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "138"
+      },
+      "response": {
+        "items": [
+          {
+            "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "role": "master",
+            "since_at": 1794284191,
+            "state": "member"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 138
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/guilds/6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f/applications",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "31"
+      },
+      "response": {
+        "items": [],
+        "next_cursor": null
+      },
+      "response_body_bytes": 31
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/guilds/6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f/master-claim",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "330"
+      },
+      "response": {
+        "eligible": false,
+        "evaluated_at": 1794284191,
+        "guild_id": "6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f",
+        "inactive_master_days": null,
+        "inactive_since_at": 1794284191,
+        "master_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+        "master_last_active_at": 1794284191,
+        "master_since_at": 1794284191,
+        "policy_revision": 0,
+        "reason": "claimant_required",
+        "revision": 1
+      },
+      "response_body_bytes": 330
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/groups/guilds/6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "166"
+      },
+      "response": {
+        "access": "public",
+        "closed_at": null,
+        "group_id": "00000000-0000-0000-0000-000000000000",
+        "guild_id": "6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f",
+        "member_count": 1,
+        "revision": 1
+      },
+      "response_body_bytes": 166
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/groups/players/1be2cdc8-6baa-449b-ae80-036be49fd615",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "115"
+      },
+      "response": {
+        "group_id": "00000000-0000-0000-0000-000000000000",
+        "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+        "revision": 0
+      },
+      "response_body_bytes": 115
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/guilds/players/1be2cdc8-6baa-449b-ae80-036be49fd615",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "122"
+      },
+      "response": {
+        "applications": [],
+        "membership": {
+          "guild_id": "6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f",
+          "role": "master",
+          "since_at": 1794284191
+        }
+      },
+      "response_body_bytes": 122
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/guilds/6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "340"
+      },
+      "response": {
+        "access": "public",
+        "admission": "open",
+        "capacity": 10,
+        "closed_at": null,
+        "country": "KR",
+        "created_at": 1794284191,
+        "group_id": "00000000-0000-0000-0000-000000000000",
+        "id": "6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f",
+        "master_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+        "member_count": 1,
+        "metadata": {},
+        "name": "APIFixtureGuild",
+        "pending_count": 0,
+        "revision": 1
+      },
+      "response_body_bytes": 340
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/guilds/6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f/members",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "138"
+      },
+      "response": {
+        "items": [
+          {
+            "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "role": "master",
+            "since_at": 1794284191,
+            "state": "member"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 138
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/guilds/6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f/treasury",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "136"
+      },
+      "response": {
+        "assets": [],
+        "configured": false,
+        "guild_id": "6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f",
+        "locked": false,
+        "revision": 0,
+        "settlement_locked": false
+      },
+      "response_body_bytes": 136
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/guilds/6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f/treasury/ledger",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "31"
+      },
+      "response": {
+        "items": [],
+        "next_cursor": null
+      },
+      "response_body_bytes": 31
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/game/guilds/6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f/treasury/configure",
+      "request": {
+        "request_id": "acda3ad7-09c9-4ee6-b186-cc716a2dada7",
+        "reason": "API fixture",
+        "expected_revision": 0,
+        "asset_ids": [
+          "d71ed461-b772-4ca9-a660-e48d11317482"
+        ]
+      },
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "243"
+      },
+      "response": {
+        "assets": [
+          {
+            "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+            "balance": 0,
+            "kind": "currency",
+            "name": "API coin",
+            "slot": 0
+          }
+        ],
+        "configured": true,
+        "guild_id": "6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f",
+        "locked": false,
+        "revision": 1,
+        "settlement_locked": false
+      },
+      "response_body_bytes": 243
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/game/guilds/6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f/treasury/contribute",
+      "request": {
+        "request_id": "39b53d2e-dec0-4d4b-a6bd-d7391b93a279",
+        "reason": "API fixture",
+        "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+        "amount": 10
+      },
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "244"
+      },
+      "response": {
+        "assets": [
+          {
+            "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+            "balance": 10,
+            "kind": "currency",
+            "name": "API coin",
+            "slot": 0
+          }
+        ],
+        "configured": true,
+        "guild_id": "6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f",
+        "locked": false,
+        "revision": 1,
+        "settlement_locked": false
+      },
+      "response_body_bytes": 244
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/guilds/6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f/treasury",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "244"
+      },
+      "response": {
+        "assets": [
+          {
+            "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+            "balance": 10,
+            "kind": "currency",
+            "name": "API coin",
+            "slot": 0
+          }
+        ],
+        "configured": true,
+        "guild_id": "6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f",
+        "locked": false,
+        "revision": 1,
+        "settlement_locked": false
+      },
+      "response_body_bytes": 244
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/guilds/6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f/treasury/ledger",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "238"
+      },
+      "response": {
+        "items": [
+          {
+            "amount": 10,
+            "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+            "balance_after": 10,
+            "created_at": 1794284191,
+            "id": 1,
+            "kind": "contribute",
+            "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "reason": "API fixture"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 238
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/leaderboards",
+      "request": {
+        "key": "docs",
+        "name": "API fixture board",
+        "sort": "desc"
+      },
+      "status": 201,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "99"
+      },
+      "response": {
+        "id": "351023df-58b6-4093-9727-28ad87ffbe41",
+        "key": "docs",
+        "name": "API fixture board",
+        "sort": "desc"
+      },
+      "response_body_bytes": 99
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/leaderboards",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "130"
+      },
+      "response": {
+        "items": [
+          {
+            "id": "351023df-58b6-4093-9727-28ad87ffbe41",
+            "key": "docs",
+            "name": "API fixture board",
+            "sort": "desc"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 130
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/leaderboards",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "130"
+      },
+      "response": {
+        "items": [
+          {
+            "id": "351023df-58b6-4093-9727-28ad87ffbe41",
+            "key": "docs",
+            "name": "API fixture board",
+            "sort": "desc"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 130
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/leaderboards/351023df-58b6-4093-9727-28ad87ffbe41/seasons",
+      "request": {
+        "key": "docs",
+        "starts_at": 1794284161,
+        "ends_at": 1794287791,
+        "rewards": [],
+        "reward_ttl_seconds": 3600
+      },
+      "status": 201,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "220"
+      },
+      "response": {
+        "ends_at": 1794287791,
+        "id": "2cb2662d-2291-4547-8ef7-eaa333c873fa",
+        "key": "docs",
+        "processed_count": 0,
+        "reward_ttl_seconds": 3600,
+        "rewards": [],
+        "settled_at": null,
+        "settlement_revision": 0,
+        "starts_at": 1794284161,
+        "state": "active"
+      },
+      "response_body_bytes": 220
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/leaderboards/351023df-58b6-4093-9727-28ad87ffbe41/seasons",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "251"
+      },
+      "response": {
+        "items": [
+          {
+            "ends_at": 1794287791,
+            "id": "2cb2662d-2291-4547-8ef7-eaa333c873fa",
+            "key": "docs",
+            "processed_count": 0,
+            "reward_ttl_seconds": 3600,
+            "rewards": [],
+            "settled_at": null,
+            "settlement_revision": 0,
+            "starts_at": 1794284161,
+            "state": "active"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 251
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/leaderboards/351023df-58b6-4093-9727-28ad87ffbe41/seasons/2cb2662d-2291-4547-8ef7-eaa333c873fa",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "220"
+      },
+      "response": {
+        "ends_at": 1794287791,
+        "id": "2cb2662d-2291-4547-8ef7-eaa333c873fa",
+        "key": "docs",
+        "processed_count": 0,
+        "reward_ttl_seconds": 3600,
+        "rewards": [],
+        "settled_at": null,
+        "settlement_revision": 0,
+        "starts_at": 1794284161,
+        "state": "active"
+      },
+      "response_body_bytes": 220
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/leaderboards/351023df-58b6-4093-9727-28ad87ffbe41/seasons/2cb2662d-2291-4547-8ef7-eaa333c873fa/scores",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "31"
+      },
+      "response": {
+        "items": [],
+        "next_cursor": null
+      },
+      "response_body_bytes": 31
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/leaderboards/351023df-58b6-4093-9727-28ad87ffbe41/seasons/2cb2662d-2291-4547-8ef7-eaa333c873fa/awards",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "31"
+      },
+      "response": {
+        "items": [],
+        "next_cursor": null
+      },
+      "response_body_bytes": 31
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/leaderboards/351023df-58b6-4093-9727-28ad87ffbe41/seasons",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "251"
+      },
+      "response": {
+        "items": [
+          {
+            "ends_at": 1794287791,
+            "id": "2cb2662d-2291-4547-8ef7-eaa333c873fa",
+            "key": "docs",
+            "processed_count": 0,
+            "reward_ttl_seconds": 3600,
+            "rewards": [],
+            "settled_at": null,
+            "settlement_revision": 0,
+            "starts_at": 1794284161,
+            "state": "active"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 251
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/leaderboards/351023df-58b6-4093-9727-28ad87ffbe41/seasons/2cb2662d-2291-4547-8ef7-eaa333c873fa",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "220"
+      },
+      "response": {
+        "ends_at": 1794287791,
+        "id": "2cb2662d-2291-4547-8ef7-eaa333c873fa",
+        "key": "docs",
+        "processed_count": 0,
+        "reward_ttl_seconds": 3600,
+        "rewards": [],
+        "settled_at": null,
+        "settlement_revision": 0,
+        "starts_at": 1794284161,
+        "state": "active"
+      },
+      "response_body_bytes": 220
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/leaderboards/351023df-58b6-4093-9727-28ad87ffbe41/seasons/2cb2662d-2291-4547-8ef7-eaa333c873fa/scores",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "31"
+      },
+      "response": {
+        "items": [],
+        "next_cursor": null
+      },
+      "response_body_bytes": 31
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/leaderboards/351023df-58b6-4093-9727-28ad87ffbe41/seasons/2cb2662d-2291-4547-8ef7-eaa333c873fa/me",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "14"
+      },
+      "response": {
+        "entry": null
+      },
+      "response_body_bytes": 14
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/guild-leaderboards",
+      "request": {
+        "key": "docs",
+        "name": "API fixture board",
+        "sort": "desc",
+        "source": {
+          "kind": "treasury",
+          "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482"
+        }
+      },
+      "status": 201,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "178"
+      },
+      "response": {
+        "id": "55535cea-5788-4fb0-a4db-4da443872ce6",
+        "key": "docs",
+        "name": "API fixture board",
+        "sort": "desc",
+        "source": {
+          "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+          "kind": "treasury"
+        }
+      },
+      "response_body_bytes": 178
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/guild-leaderboards",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "209"
+      },
+      "response": {
+        "items": [
+          {
+            "id": "55535cea-5788-4fb0-a4db-4da443872ce6",
+            "key": "docs",
+            "name": "API fixture board",
+            "sort": "desc",
+            "source": {
+              "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+              "kind": "treasury"
+            }
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 209
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/guild-leaderboards",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "209"
+      },
+      "response": {
+        "items": [
+          {
+            "id": "55535cea-5788-4fb0-a4db-4da443872ce6",
+            "key": "docs",
+            "name": "API fixture board",
+            "sort": "desc",
+            "source": {
+              "asset_id": "d71ed461-b772-4ca9-a660-e48d11317482",
+              "kind": "treasury"
+            }
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 209
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/guild-leaderboards/55535cea-5788-4fb0-a4db-4da443872ce6/seasons",
+      "request": {
+        "key": "docs",
+        "starts_at": 1794284161,
+        "ends_at": 1794287791,
+        "rewards": [],
+        "reward_ttl_seconds": 3600
+      },
+      "status": 201,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "307"
+      },
+      "response": {
+        "current_guild_id": null,
+        "ends_at": 1794287791,
+        "id": "80df72de-d6b3-4bce-8f45-947861c92a95",
+        "key": "docs",
+        "participation_rewards": [],
+        "processed_guild_count": 0,
+        "processed_recipient_count": 0,
+        "reward_ttl_seconds": 3600,
+        "rewards": [],
+        "settled_at": null,
+        "settlement_revision": 0,
+        "starts_at": 1794284161,
+        "state": "active"
+      },
+      "response_body_bytes": 307
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/guild-leaderboards/55535cea-5788-4fb0-a4db-4da443872ce6/seasons",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "338"
+      },
+      "response": {
+        "items": [
+          {
+            "current_guild_id": null,
+            "ends_at": 1794287791,
+            "id": "80df72de-d6b3-4bce-8f45-947861c92a95",
+            "key": "docs",
+            "participation_rewards": [],
+            "processed_guild_count": 0,
+            "processed_recipient_count": 0,
+            "reward_ttl_seconds": 3600,
+            "rewards": [],
+            "settled_at": null,
+            "settlement_revision": 0,
+            "starts_at": 1794284161,
+            "state": "active"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 338
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/guild-leaderboards/55535cea-5788-4fb0-a4db-4da443872ce6/seasons/80df72de-d6b3-4bce-8f45-947861c92a95",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "307"
+      },
+      "response": {
+        "current_guild_id": null,
+        "ends_at": 1794287791,
+        "id": "80df72de-d6b3-4bce-8f45-947861c92a95",
+        "key": "docs",
+        "participation_rewards": [],
+        "processed_guild_count": 0,
+        "processed_recipient_count": 0,
+        "reward_ttl_seconds": 3600,
+        "rewards": [],
+        "settled_at": null,
+        "settlement_revision": 0,
+        "starts_at": 1794284161,
+        "state": "active"
+      },
+      "response_body_bytes": 307
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/guild-leaderboards/55535cea-5788-4fb0-a4db-4da443872ce6/seasons/80df72de-d6b3-4bce-8f45-947861c92a95/scores",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "31"
+      },
+      "response": {
+        "items": [],
+        "next_cursor": null
+      },
+      "response_body_bytes": 31
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/guild-leaderboards/55535cea-5788-4fb0-a4db-4da443872ce6/seasons/80df72de-d6b3-4bce-8f45-947861c92a95/awards",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "31"
+      },
+      "response": {
+        "items": [],
+        "next_cursor": null
+      },
+      "response_body_bytes": 31
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/guild-leaderboards/55535cea-5788-4fb0-a4db-4da443872ce6/seasons",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "338"
+      },
+      "response": {
+        "items": [
+          {
+            "current_guild_id": null,
+            "ends_at": 1794287791,
+            "id": "80df72de-d6b3-4bce-8f45-947861c92a95",
+            "key": "docs",
+            "participation_rewards": [],
+            "processed_guild_count": 0,
+            "processed_recipient_count": 0,
+            "reward_ttl_seconds": 3600,
+            "rewards": [],
+            "settled_at": null,
+            "settlement_revision": 0,
+            "starts_at": 1794284161,
+            "state": "active"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 338
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/guild-leaderboards/55535cea-5788-4fb0-a4db-4da443872ce6/seasons/80df72de-d6b3-4bce-8f45-947861c92a95",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "307"
+      },
+      "response": {
+        "current_guild_id": null,
+        "ends_at": 1794287791,
+        "id": "80df72de-d6b3-4bce-8f45-947861c92a95",
+        "key": "docs",
+        "participation_rewards": [],
+        "processed_guild_count": 0,
+        "processed_recipient_count": 0,
+        "reward_ttl_seconds": 3600,
+        "rewards": [],
+        "settled_at": null,
+        "settlement_revision": 0,
+        "starts_at": 1794284161,
+        "state": "active"
+      },
+      "response_body_bytes": 307
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/guild-leaderboards/55535cea-5788-4fb0-a4db-4da443872ce6/seasons/80df72de-d6b3-4bce-8f45-947861c92a95/scores",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "31"
+      },
+      "response": {
+        "items": [],
+        "next_cursor": null
+      },
+      "response_body_bytes": 31
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/guild-leaderboards/55535cea-5788-4fb0-a4db-4da443872ce6/seasons/80df72de-d6b3-4bce-8f45-947861c92a95/me",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "14"
+      },
+      "response": {
+        "entry": null
+      },
+      "response_body_bytes": 14
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/data/collections",
+      "request": {
+        "request_id": "89fbc6b5-9ab2-4585-bed4-363e5edbe232",
+        "key": "docs",
+        "name": "API fixture data",
+        "kind": "user",
+        "read_access": "owner",
+        "write_access": "owner",
+        "schema": null,
+        "reason": "API fixture"
+      },
+      "status": 201,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "236"
+      },
+      "response": {
+        "archived_at": null,
+        "created_at": 1794284191,
+        "id": "08f9dd92-498a-4793-bd23-939935dcbd2f",
+        "key": "docs",
+        "kind": "user",
+        "name": "API fixture data",
+        "read_access": "owner",
+        "schema": null,
+        "updated_at": 1794284191,
+        "version": 1,
+        "write_access": "owner"
+      },
+      "response_body_bytes": 236
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/data/collections",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "253"
+      },
+      "response": {
+        "items": [
+          {
+            "archived_at": null,
+            "created_at": 1794284191,
+            "id": "08f9dd92-498a-4793-bd23-939935dcbd2f",
+            "key": "docs",
+            "kind": "user",
+            "name": "API fixture data",
+            "read_access": "owner",
+            "updated_at": 1794284191,
+            "version": 1,
+            "write_access": "owner"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 253
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/data/collections/08f9dd92-498a-4793-bd23-939935dcbd2f",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "236"
+      },
+      "response": {
+        "archived_at": null,
+        "created_at": 1794284191,
+        "id": "08f9dd92-498a-4793-bd23-939935dcbd2f",
+        "key": "docs",
+        "kind": "user",
+        "name": "API fixture data",
+        "read_access": "owner",
+        "schema": null,
+        "updated_at": 1794284191,
+        "version": 1,
+        "write_access": "owner"
+      },
+      "response_body_bytes": 236
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/data/collections/08f9dd92-498a-4793-bd23-939935dcbd2f/rows",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "31"
+      },
+      "response": {
+        "items": [],
+        "next_cursor": null
+      },
+      "response_body_bytes": 31
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/data/collections/08f9dd92-498a-4793-bd23-939935dcbd2f/indexes",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "12"
+      },
+      "response": {
+        "items": []
+      },
+      "response_body_bytes": 12
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/data/collections",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "253"
+      },
+      "response": {
+        "items": [
+          {
+            "archived_at": null,
+            "created_at": 1794284191,
+            "id": "08f9dd92-498a-4793-bd23-939935dcbd2f",
+            "key": "docs",
+            "kind": "user",
+            "name": "API fixture data",
+            "read_access": "owner",
+            "updated_at": 1794284191,
+            "version": 1,
+            "write_access": "owner"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 253
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/data/collections/08f9dd92-498a-4793-bd23-939935dcbd2f",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "236"
+      },
+      "response": {
+        "archived_at": null,
+        "created_at": 1794284191,
+        "id": "08f9dd92-498a-4793-bd23-939935dcbd2f",
+        "key": "docs",
+        "kind": "user",
+        "name": "API fixture data",
+        "read_access": "owner",
+        "schema": null,
+        "updated_at": 1794284191,
+        "version": 1,
+        "write_access": "owner"
+      },
+      "response_body_bytes": 236
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/data/collections/08f9dd92-498a-4793-bd23-939935dcbd2f/rows",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "31"
+      },
+      "response": {
+        "items": [],
+        "next_cursor": null
+      },
+      "response_body_bytes": 31
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/data/collections/08f9dd92-498a-4793-bd23-939935dcbd2f/indexes",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "12"
+      },
+      "response": {
+        "items": []
+      },
+      "response_body_bytes": 12
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/game/data/collections/08f9dd92-498a-4793-bd23-939935dcbd2f/rows",
+      "request": {
+        "request_id": "c51d6fd2-b7cd-4365-a354-a6dba2e57e8b",
+        "expected_collection_version": 1,
+        "data": {
+          "score": 10
+        }
+      },
+      "status": 201,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "248"
+      },
+      "response": {
+        "collection_id": "08f9dd92-498a-4793-bd23-939935dcbd2f",
+        "created_at": 1794284191,
+        "data": {
+          "score": 10
+        },
+        "deleted_at": null,
+        "id": "71f2a07f-de24-4083-927d-01454a451129",
+        "owner_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+        "updated_at": 1794284191,
+        "version": 1
+      },
+      "response_body_bytes": 248
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/data/collections/08f9dd92-498a-4793-bd23-939935dcbd2f/rows/71f2a07f-de24-4083-927d-01454a451129",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "248"
+      },
+      "response": {
+        "collection_id": "08f9dd92-498a-4793-bd23-939935dcbd2f",
+        "created_at": 1794284191,
+        "data": {
+          "score": 10
+        },
+        "deleted_at": null,
+        "id": "71f2a07f-de24-4083-927d-01454a451129",
+        "owner_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+        "updated_at": 1794284191,
+        "version": 1
+      },
+      "response_body_bytes": 248
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/data/collections/08f9dd92-498a-4793-bd23-939935dcbd2f/rows/query?q=%7B%7D",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "279"
+      },
+      "response": {
+        "items": [
+          {
+            "collection_id": "08f9dd92-498a-4793-bd23-939935dcbd2f",
+            "created_at": 1794284191,
+            "data": {
+              "score": 10
+            },
+            "deleted_at": null,
+            "id": "71f2a07f-de24-4083-927d-01454a451129",
+            "owner_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "updated_at": 1794284191,
+            "version": 1
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 279
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/data/collections/08f9dd92-498a-4793-bd23-939935dcbd2f/rows/count?q=%7B%7D",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "11"
+      },
+      "response": {
+        "count": 1
+      },
+      "response_body_bytes": 11
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/data/collections/08f9dd92-498a-4793-bd23-939935dcbd2f/rows/any?q=%7B%7D",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "12"
+      },
+      "response": {
+        "any": true
+      },
+      "response_body_bytes": 12
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/data/collections/08f9dd92-498a-4793-bd23-939935dcbd2f/rows/71f2a07f-de24-4083-927d-01454a451129",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "248"
+      },
+      "response": {
+        "collection_id": "08f9dd92-498a-4793-bd23-939935dcbd2f",
+        "created_at": 1794284191,
+        "data": {
+          "score": 10
+        },
+        "deleted_at": null,
+        "id": "71f2a07f-de24-4083-927d-01454a451129",
+        "owner_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+        "updated_at": 1794284191,
+        "version": 1
+      },
+      "response_body_bytes": 248
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/data/collections/08f9dd92-498a-4793-bd23-939935dcbd2f/rows/query?q=%7B%7D",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "279"
+      },
+      "response": {
+        "items": [
+          {
+            "collection_id": "08f9dd92-498a-4793-bd23-939935dcbd2f",
+            "created_at": 1794284191,
+            "data": {
+              "score": 10
+            },
+            "deleted_at": null,
+            "id": "71f2a07f-de24-4083-927d-01454a451129",
+            "owner_id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "updated_at": 1794284191,
+            "version": 1
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 279
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/data/collections/08f9dd92-498a-4793-bd23-939935dcbd2f/rows/count?q=%7B%7D",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "11"
+      },
+      "response": {
+        "count": 1
+      },
+      "response_body_bytes": 11
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/game/data/collections/08f9dd92-498a-4793-bd23-939935dcbd2f/rows/any?q=%7B%7D",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "12"
+      },
+      "response": {
+        "any": true
+      },
+      "response_body_bytes": 12
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/projects/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/audit",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "7839"
+      },
+      "response": {
+        "items": [
+          {
+            "action": "game_data.rows_written",
+            "actor": "player:1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "created_at": 1794284191,
+            "id": 23,
+            "reason": null,
+            "result": "{\"operations\":[{\"action\":\"insert\",\"id\":\"71f2a07f-de24-4083-927d-01454a451129\",\"version\":1}],\"request_id\":\"c51d6fd2-b7cd-4365-a354-a6dba2e57e8b\"}",
+            "target": "08f9dd92-498a-4793-bd23-939935dcbd2f"
+          },
+          {
+            "action": "game_data.collection_created",
+            "actor": "admin:c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
+            "created_at": 1794284191,
+            "id": 22,
+            "reason": "API fixture",
+            "result": "{\"archived_at\":null,\"created_at\":1794284191,\"id\":\"08f9dd92-498a-4793-bd23-939935dcbd2f\",\"key\":\"docs\",\"kind\":\"user\",\"name\":\"API fixture data\",\"read_access\":\"owner\",\"schema\":null,\"updated_at\":1794284191,\"version\":1,\"write_access\":\"owner\"}",
+            "target": "08f9dd92-498a-4793-bd23-939935dcbd2f"
+          },
+          {
+            "action": "guild.leaderboard.season_created",
+            "actor": "c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
+            "created_at": 1794284191,
+            "id": 21,
+            "reason": null,
+            "result": "{\"current_guild_id\":null,\"ends_at\":1794287791,\"id\":\"80df72de-d6b3-4bce-8f45-947861c92a95\",\"key\":\"docs\",\"participation_rewards\":[],\"processed_guild_count\":0,\"processed_recipient_count\":0,\"reward_ttl_seconds\":3600,\"rewards\":[],\"settled_at\":null,\"settlement_revision\":0,\"starts_at\":1794284161,\"state\":\"active\"}",
+            "target": "80df72de-d6b3-4bce-8f45-947861c92a95"
+          },
+          {
+            "action": "guild.leaderboard.created",
+            "actor": "c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
+            "created_at": 1794284191,
+            "id": 20,
+            "reason": null,
+            "result": "{\"id\":\"55535cea-5788-4fb0-a4db-4da443872ce6\",\"key\":\"docs\",\"name\":\"API fixture board\",\"sort\":\"desc\",\"source\":{\"asset_id\":\"d71ed461-b772-4ca9-a660-e48d11317482\",\"kind\":\"treasury\"}}",
+            "target": "55535cea-5788-4fb0-a4db-4da443872ce6"
+          },
+          {
+            "action": "leaderboard.season_created",
+            "actor": "c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
+            "created_at": 1794284191,
+            "id": 19,
+            "reason": null,
+            "result": "{\"ends_at\":1794287791,\"id\":\"2cb2662d-2291-4547-8ef7-eaa333c873fa\",\"key\":\"docs\",\"processed_count\":0,\"reward_ttl_seconds\":3600,\"rewards\":[],\"settled_at\":null,\"settlement_revision\":0,\"starts_at\":1794284161,\"state\":\"active\"}",
+            "target": "2cb2662d-2291-4547-8ef7-eaa333c873fa"
+          },
+          {
+            "action": "leaderboard.created",
+            "actor": "c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
+            "created_at": 1794284191,
+            "id": 18,
+            "reason": null,
+            "result": "{\"id\":\"351023df-58b6-4093-9727-28ad87ffbe41\",\"key\":\"docs\",\"name\":\"API fixture board\",\"sort\":\"desc\"}",
+            "target": "351023df-58b6-4093-9727-28ad87ffbe41"
+          },
+          {
+            "action": "guild.treasury.contributed",
+            "actor": "player:1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "created_at": 1794284191,
+            "id": 17,
+            "reason": "API fixture",
+            "result": "{\"assets\":[{\"asset_id\":\"d71ed461-b772-4ca9-a660-e48d11317482\",\"balance\":10,\"kind\":\"currency\",\"name\":\"API coin\",\"slot\":0}],\"configured\":true,\"guild_id\":\"6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f\",\"locked\":false,\"revision\":1,\"settlement_locked\":false}",
+            "target": "6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f"
+          },
+          {
+            "action": "guild.treasury.configured",
+            "actor": "player:1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "created_at": 1794284191,
+            "id": 16,
+            "reason": "API fixture",
+            "result": "{\"assets\":[{\"asset_id\":\"d71ed461-b772-4ca9-a660-e48d11317482\",\"balance\":0,\"kind\":\"currency\",\"name\":\"API coin\",\"slot\":0}],\"configured\":true,\"guild_id\":\"6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f\",\"locked\":false,\"revision\":1,\"settlement_locked\":false}",
+            "target": "6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f"
+          },
+          {
+            "action": "guild.created",
+            "actor": "1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "created_at": 1794284191,
+            "id": 15,
+            "reason": null,
+            "result": "{\"guild\":{\"access\":\"public\",\"admission\":\"open\",\"capacity\":10,\"closed_at\":null,\"country\":\"KR\",\"created_at\":1794284191,\"group_id\":\"00000000-0000-0000-0000-000000000000\",\"id\":\"6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f\",\"master_id\":\"1be2cdc8-6baa-449b-ae80-036be49fd615\",\"member_count\":1,\"metadata\":{},\"name\":\"APIFixtureGuild\",\"pending_count\":0,\"revision\":1},\"participant\":{\"player_id\":\"1be2cdc8-6baa-449b-ae80-036be49fd615\",\"role\":\"master\",\"since_at\":1794284191,\"state\":\"member\"}}",
+            "target": "6c4b6cac-e6a8-4d34-9f81-69c0e3f3068f"
+          },
+          {
+            "action": "groups.created",
+            "actor": "c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
+            "created_at": 1794284191,
+            "id": 14,
+            "reason": "API fixture",
+            "result": "{\"created_at\":1794284191,\"id\":\"329c218a-1e7f-4135-b54e-2a17fae3fc95\",\"is_default\":false,\"name\":\"FixtureGroup\",\"revision\":1}",
+            "target": "329c218a-1e7f-4135-b54e-2a17fae3fc95"
+          },
+          {
+            "action": "content.published",
+            "actor": "c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
+            "created_at": 1794284191,
+            "id": 13,
+            "reason": "API fixture",
+            "result": "{\"publication_version\":1,\"published_revision\":1}",
+            "target": "9f360de2-8df4-451e-8b35-4060a15dd31f"
+          },
+          {
+            "action": "content.created",
+            "actor": "c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
+            "created_at": 1794284191,
+            "id": 12,
+            "reason": null,
+            "result": "{\"key\":\"docs\",\"kind\":\"notice\",\"locale\":\"en\"}",
+            "target": "9f360de2-8df4-451e-8b35-4060a15dd31f"
+          },
+          {
+            "action": "economy.granted",
+            "actor": "player:1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "created_at": 1794284191,
+            "id": 11,
+            "reason": "coupon:52d36529-f1d1-4362-bb2c-1ce50532d7d7",
+            "result": "{\"amount\":5,\"asset_id\":\"d71ed461-b772-4ca9-a660-e48d11317482\",\"balance\":1010,\"business_id\":\"coupon:52d36529-f1d1-4362-bb2c-1ce50532d7d7\"}",
+            "target": "1be2cdc8-6baa-449b-ae80-036be49fd615"
+          },
+          {
+            "action": "coupon.created",
+            "actor": "c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
+            "created_at": 1794284191,
+            "id": 10,
+            "reason": null,
+            "result": "{\"max_redemptions\":10}",
+            "target": "52d36529-f1d1-4362-bb2c-1ce50532d7d7"
+          },
+          {
+            "action": "economy.granted",
+            "actor": "player:1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "created_at": 1794284191,
+            "id": 9,
+            "reason": "mail:33de656e-81a2-46ad-9cdc-641c53d39b99",
+            "result": "{\"amount\":5,\"asset_id\":\"d71ed461-b772-4ca9-a660-e48d11317482\",\"balance\":1005,\"business_id\":\"mail:33de656e-81a2-46ad-9cdc-641c53d39b99\"}",
+            "target": "1be2cdc8-6baa-449b-ae80-036be49fd615"
+          },
+          {
+            "action": "mail.created",
+            "actor": "c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
+            "created_at": 1794284191,
+            "id": 8,
+            "reason": "API fixture",
+            "result": "{\"player_id\":\"1be2cdc8-6baa-449b-ae80-036be49fd615\"}",
+            "target": "33de656e-81a2-46ad-9cdc-641c53d39b99"
+          },
+          {
+            "action": "economy.granted",
+            "actor": "c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
+            "created_at": 1794284191,
+            "id": 7,
+            "reason": "API contract fixture",
+            "result": "{\"amount\":1000,\"asset_id\":\"d71ed461-b772-4ca9-a660-e48d11317482\",\"balance\":1000,\"business_id\":\"grant:c3fbee7b-c1fc-4564-b146-3a989d7844e8\"}",
+            "target": "1be2cdc8-6baa-449b-ae80-036be49fd615"
+          },
+          {
+            "action": "asset.created",
+            "actor": "c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
+            "created_at": 1794284191,
+            "id": 6,
+            "reason": null,
+            "result": "{\"kind\":\"currency\",\"name\":\"API coin\"}",
+            "target": "d71ed461-b772-4ca9-a660-e48d11317482"
+          },
+          {
+            "action": "progress.saved",
+            "actor": "player:1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "created_at": 1794284191,
+            "id": 5,
+            "reason": null,
+            "result": "{\"progress\":{\"intro_seen\":true,\"schema_version\":1,\"stage\":2},\"version\":1}",
+            "target": "1be2cdc8-6baa-449b-ae80-036be49fd615"
+          },
+          {
+            "action": "profile.updated",
+            "actor": "player:1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "created_at": 1794284191,
+            "id": 4,
+            "reason": null,
+            "result": "{\"nickname\":\"api_doc_player\",\"player_id\":\"1be2cdc8-6baa-449b-ae80-036be49fd615\",\"updated_at\":1794284191,\"version\":1}",
+            "target": "1be2cdc8-6baa-449b-ae80-036be49fd615"
+          },
+          {
+            "action": "guest.created",
+            "actor": "player:1be2cdc8-6baa-449b-ae80-036be49fd615",
+            "created_at": 1794284191,
+            "id": 3,
+            "reason": null,
+            "result": "{\"id\":\"1be2cdc8-6baa-449b-ae80-036be49fd615\"}",
+            "target": "1be2cdc8-6baa-449b-ae80-036be49fd615"
+          },
+          {
+            "action": "project.created",
+            "actor": "c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
+            "created_at": 1794284191,
+            "id": 1,
+            "reason": null,
+            "result": "{\"name\":\"API reference fixture\"}",
+            "target": "3e8e8d39-50a4-42d9-83c9-e0888d929ff5"
+          }
+        ],
+        "next_cursor": null
+      },
+      "response_body_bytes": 7839
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/game/session/refresh",
+      "request": null,
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "100"
+      },
+      "response": {
+        "expires_at": 1794287791,
+        "token": "<redacted-test-secret>"
+      },
+      "response_body_bytes": 100
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/game/session",
+      "request": null,
+      "status": 401,
+      "headers": {
+        "content-type": "application/problem+json",
+        "cache-control": "no-store",
+        "content-length": "105"
+      },
+      "response": {
+        "code": "unauthorized",
+        "status": 401,
+        "title": "unauthorized",
+        "type": "urn:game-platform:error:unauthorized"
+      },
+      "response_body_bytes": 105
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/logout",
+      "request": null,
+      "status": 204,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "content-length": "4"
+      },
+      "response": null,
+      "response_body_bytes": 0
+    }
+  ],
+  "unexpected_failures": []
+}
