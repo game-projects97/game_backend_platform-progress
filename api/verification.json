@@ -1,25 +1,32 @@
 {
-  "verified_at": "2026-11-10T04:16:31Z",
-  "cargo_command": "cargo test --locked --offline --manifest-path server/Cargo.toml",
-  "rust_tests_passed": 424,
-  "rust_tests_failed": 0,
-  "rust_test_result_groups": 51,
-  "http_requests": 120,
-  "http_unexpected_failures": 0,
-  "http_documented_operations_exercised": 120,
-  "openapi_checks": [
-    "JSON/YAML round-trip equality",
-    "all local schema references resolve",
-    "JSON Schema Draft 2020-12 structure",
-    "unique operationId",
-    "path parameters match templates",
-    "recorded request/response fixtures validate against documented schemas"
-  ],
+  "updated_at": "2026-11-10",
+  "current_contract": "JWT HS256; separate admin/game audiences; database revocation and current authorization checks retained",
+  "current_checks": {
+    "rust_tests_passed": 435,
+    "rust_tests_failed": 0,
+    "api_docs_tests_included": 3,
+    "sdk_tests_passed": 21,
+    "console_tests_passed": 3,
+    "format_clippy_typechecks_build": "passed",
+    "isolated_docs_and_auth_http_requests": 31,
+    "isolated_jwt_sdk_restart_flows": 5,
+    "openapi_operations": 205,
+    "openapi_domains": 17,
+    "contract_checks": "reproducibility, JSON/YAML equality, references, path parameters, unique operation IDs, JSON Schema structure"
+  },
+  "historical_checks": {
+    "pre_jwt_rust_tests": 424,
+    "pre_jwt_isolated_http_operations": 120,
+    "note": "Historical checks are not claimed as rerun HTTP coverage of the current JWT implementation."
+  },
+  "examples_in_download": 112,
   "not_verified": [
-    "all 205 operations individually over live HTTP",
-    "production performance or SLO",
-    "complete fixed response schemas for SDK generation",
-    "production backend deployment"
+    "all 205 current API operations individually over HTTP",
+    "live Swagger browser clicks and mobile visual layout",
+    "public HTTPS backend ingress/deployment",
+    "production security, load or SLO",
+    "native Android/iOS SDK and real devices",
+    "complete fixed response models for SDK generation"
   ],
-  "fixture_correction": "First isolated probe used a group name with spaces and received expected validation rule 422 invalid_group_name. Fixture changed to permitted ASCII alphanumeric/hyphen format. Final 120-request run has no unexpected failures."
+  "publication_scope": "Public API contract and sanitized test summaries only; no secrets, operational data, database, raw implementation sources or private logs."
 }

@@ -18,42 +18,6 @@
     },
     {
       "method": "POST",
-      "path": "/api/v1/admin/login",
-      "request": {
-        "username": "api_docs_admin",
-        "password": "<redacted-test-secret>"
-      },
-      "status": 200,
-      "headers": {
-        "content-type": "application/json",
-        "cache-control": "no-store",
-        "content-length": "61"
-      },
-      "response": {
-        "id": "c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
-        "is_owner": true
-      },
-      "response_body_bytes": 61
-    },
-    {
-      "method": "GET",
-      "path": "/api/v1/admin/me",
-      "request": null,
-      "status": 200,
-      "headers": {
-        "content-type": "application/json",
-        "cache-control": "no-store",
-        "content-length": "89"
-      },
-      "response": {
-        "id": "c8a04cc1-0495-4de7-8ca6-c3809b5e44f4",
-        "is_owner": true,
-        "username": "api_docs_admin"
-      },
-      "response_body_bytes": 89
-    },
-    {
-      "method": "POST",
       "path": "/api/v1/admin/projects",
       "request": {
         "name": "API reference fixture"
@@ -137,59 +101,6 @@
         "version_status": "supported"
       },
       "response_body_bytes": 254
-    },
-    {
-      "method": "POST",
-      "path": "/api/v1/game/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/guests",
-      "request": {},
-      "status": 201,
-      "headers": {
-        "content-type": "application/json",
-        "cache-control": "no-store",
-        "content-length": "132"
-      },
-      "response": {
-        "credential": "<redacted-test-secret>",
-        "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615"
-      },
-      "response_body_bytes": 132
-    },
-    {
-      "method": "POST",
-      "path": "/api/v1/game/3e8e8d39-50a4-42d9-83c9-e0888d929ff5/development/sessions",
-      "request": {
-        "credential": "<redacted-test-secret>",
-        "player_id": "1be2cdc8-6baa-449b-ae80-036be49fd615"
-      },
-      "status": 200,
-      "headers": {
-        "content-type": "application/json",
-        "cache-control": "no-store",
-        "content-length": "100"
-      },
-      "response": {
-        "expires_at": 1794287791,
-        "token": "<redacted-test-secret>"
-      },
-      "response_body_bytes": 100
-    },
-    {
-      "method": "GET",
-      "path": "/api/v1/game/me",
-      "request": null,
-      "status": 200,
-      "headers": {
-        "content-type": "application/json",
-        "cache-control": "no-store",
-        "content-length": "140"
-      },
-      "response": {
-        "environment": "development",
-        "id": "1be2cdc8-6baa-449b-ae80-036be49fd615",
-        "kind": "guest",
-        "project_id": "3e8e8d39-50a4-42d9-83c9-e0888d929ff5"
-      },
-      "response_body_bytes": 140
     },
     {
       "method": "GET",
@@ -2826,54 +2737,8 @@
         "next_cursor": null
       },
       "response_body_bytes": 7839
-    },
-    {
-      "method": "POST",
-      "path": "/api/v1/game/session/refresh",
-      "request": null,
-      "status": 200,
-      "headers": {
-        "content-type": "application/json",
-        "cache-control": "no-store",
-        "content-length": "100"
-      },
-      "response": {
-        "expires_at": 1794287791,
-        "token": "<redacted-test-secret>"
-      },
-      "response_body_bytes": 100
-    },
-    {
-      "method": "DELETE",
-      "path": "/api/v1/game/session",
-      "request": null,
-      "status": 401,
-      "headers": {
-        "content-type": "application/problem+json",
-        "cache-control": "no-store",
-        "content-length": "105"
-      },
-      "response": {
-        "code": "unauthorized",
-        "status": 401,
-        "title": "unauthorized",
-        "type": "urn:game-platform:error:unauthorized"
-      },
-      "response_body_bytes": 105
-    },
-    {
-      "method": "POST",
-      "path": "/api/v1/admin/logout",
-      "request": null,
-      "status": 204,
-      "headers": {
-        "content-type": "application/json",
-        "cache-control": "no-store",
-        "content-length": "4"
-      },
-      "response": null,
-      "response_body_bytes": 0
     }
   ],
-  "unexpected_failures": []
+  "unexpected_failures": [],
+  "historical_note": "JWT 적용 전 분리 테스트 DB에서 기록한 일반 API 응답 예제다. 현재 JWT 발급 응답 증거가 아니다. 비밀번호·토큰·자격 값은 제거했으며 실제 사용자 데이터는 없다."
 }
