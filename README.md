@@ -1,2 +1,11 @@
-# game_backend_platform-progress
-기획서 P1–P9 기준 자체 게임 백엔드 플랫폼 구현·검증 진행현황 보고서
+# Backend Platform Progress
+
+기획서 구조에 맞춰 정리한 공개 진행현황 보고서입니다. 제품 소스·사용자 데이터·비밀값은 포함하지 않습니다.
+
+- 기준일: 2026-11-10
+- `index.html`: 보고서
+- `styles.css`: 반응형 스타일
+- `report-data.json`: 정리한 현황 데이터
+- `.nojekyll`: 정적 게시 설정
+
+기존 실행 근거와 이번 점검을 구분합니다. 페이지 게시가 실제 백엔드 운영 배포를 의미하지 않습니다.
