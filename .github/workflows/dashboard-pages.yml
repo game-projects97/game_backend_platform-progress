@@ -1,0 +1,50 @@
+name: Dashboard Pages
+on:
+  push:
+    branches: [main]
+    paths:
+      [
+        "board/**",
+        "scripts/verify-dashboard.py",
+        ".github/workflows/dashboard-pages.yml",
+      ]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: dashboard-pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: 게시 데이터와 자산 확인
+        run: python3 scripts/verify-dashboard.py
+      - name: 기존 사이트 구성 보존
+        run: |
+          mkdir _site
+          cp -a index.html styles.css report-data.json .nojekyll api plan-v2 board _site/
+      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
+        with:
+          path: _site
+      - uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e
+        id: deployment
+      - name: 배포한 revision 기록
+        run: |
+          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          manifest = json.load(open('board/publication.json'))
+          print(f"대시보드 원본 revision: {manifest['revision']}")
+          print(f"게시 데이터 SHA-256: {manifest['stateSha256']}")
+          PY
