@@ -1,13 +1,5 @@
 name: Dashboard Pages
 on:
-  push:
-    branches: [main]
-    paths:
-      [
-        "board/**",
-        "scripts/verify-dashboard.py",
-        ".github/workflows/dashboard-pages.yml",
-      ]
   workflow_dispatch:
 permissions:
   contents: read
