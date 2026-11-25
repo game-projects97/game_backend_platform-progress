@@ -1,6 +1,6 @@
 {
   "runtimeSha256": "ee59b71beab93fc072eb8aec474d2892239b0db8d6efd990d842303ef4525adc",
-  "revision": 52,
-  "stateSha256": "64c8be479aa287ec5a8f461391d728da8f53eecc4951e70d28cbff9d1b70f0d8",
+  "revision": 64,
+  "stateSha256": "8ac773627f9880958182d050f76337a686110f0af727d391c46afdb56283dc20",
   "repository": "game-projects97/game_backend_platform-progress"
 }

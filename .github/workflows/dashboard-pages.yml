@@ -22,7 +22,7 @@ jobs:
         with:
           persist-credentials: false
       - name: 게시 데이터와 자산 확인
-        run: python3 scripts/verify-dashboard.py
+        run: node scripts/verify-dashboard.mjs
       - name: 기존 사이트 구성 보존
         run: |
           mkdir _site
@@ -34,9 +34,4 @@ jobs:
         id: deployment
       - name: 배포한 revision 기록
         run: |
-          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
-          import json
-          manifest = json.load(open('board/publication.json'))
-          print(f"대시보드 원본 revision: {manifest['revision']}")
-          print(f"게시 데이터 SHA-256: {manifest['stateSha256']}")
-          PY
+          node scripts/verify-dashboard.mjs --summary
