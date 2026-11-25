@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
+      actions: read
       contents: read
       pages: write
       id-token: write
@@ -28,10 +29,30 @@ jobs:
           mkdir _site
           cp -a index.html styles.css report-data.json .nojekyll api plan-v2 board _site/
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
+        id: pages_upload
         with:
+          name: github-pages-${{ github.run_attempt }}
           path: _site
+      - name: Pages 산출물 조회 대기
+        timeout-minutes: 2
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PAGES_ARTIFACT_ID: ${{ steps.pages_upload.outputs.artifact_id }}
+        run: |
+          for attempt in {1..12}; do
+            if gh api --silent "$GITHUB_REPOSITORY/actions/artifacts/$PAGES_ARTIFACT_ID"; then
+              # 배포 액션의 산출물 목록에도 업로드가 반영될 시간을 준다.
+              sleep 5
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "업로드한 Pages 산출물을 조회하지 못했습니다." >&2
+          exit 1
       - uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e
         id: deployment
+        with:
+          artifact_name: github-pages-${{ github.run_attempt }}
       - name: 배포한 revision 기록
         run: |
           node scripts/verify-dashboard.mjs --summary
