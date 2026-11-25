@@ -4724,6 +4724,32 @@
           "end": 0
         }
       ]
+    },
+    {
+      "id": "STORIO-SDK-01",
+      "parent": 13,
+      "title": "조운과아두 Storio 웹 SDK 연동 검증",
+      "status": "done",
+      "sprint": 1024,
+      "owner": "기록",
+      "date": "2026-11-24",
+      "dateKind": "completed",
+      "completedAt": "2026-11-24T11:18:17.000Z",
+      "recordKind": "subtask",
+      "description": "조운과아두 웹 게임을 Storio SDK에 연결했다. 11월 24일 격리한 Rust 서버와 PostgreSQL 17에서 초기화, 게스트 발급·로그인, 진행 조회를 확인했다. 별도 테스트 게스트의 진행을 저장하고 다시 읽어 버전 0에서 1, 단계 7을 확인했다. 게임 테스트 52개, 타입 검사, 빌드, MinbWebKit 검사가 통과했다. 11월 25일에는 게임에서 승리하고 새로고침한 뒤 같은 게스트의 단계 2와 버전 1을 다시 확인했다.",
+      "criteria": "",
+      "note": "조운과아두 웹 게임을 Storio SDK에 연결했다. 11월 24일 격리한 Rust 서버와 PostgreSQL 17에서 초기화, 게스트 발급·로그인, 진행 조회를 확인했다. 별도 테스트 게스트의 진행을 저장하고 다시 읽어 버전 0에서 1, 단계 7을 확인했다. 게임 테스트 52개, 타입 검사, 빌드, MinbWebKit 검사가 통과했다. 11월 25일에는 게임에서 승리하고 새로고침한 뒤 같은 게스트의 단계 2와 버전 1을 다시 확인했다.",
+      "comments": [
+        {
+          "id": "f7102ba9-b280-4f6b-bffe-7e02f68c3879",
+          "body": "조운과아두 웹 게임을 Storio SDK에 연결했다. 11월 24일 격리한 Rust 서버와 PostgreSQL 17에서 초기화, 게스트 발급·로그인, 진행 조회를 확인했다. 별도 테스트 게스트의 진행을 저장하고 다시 읽어 버전 0에서 1, 단계 7을 확인했다. 게임 테스트 52개, 타입 검사, 빌드, MinbWebKit 검사가 통과했다. 11월 25일에는 게임에서 승리하고 새로고침한 뒤 같은 게스트의 단계 2와 버전 1을 다시 확인했다.",
+          "createdAt": "2026-11-25T03:23:36.458Z",
+          "quote": "",
+          "field": "content",
+          "start": 0,
+          "end": 0
+        }
+      ]
     }
   ],
   "sprints": [
@@ -4958,6 +4984,15 @@
       "assignment": "scheduled",
       "start": "",
       "end": ""
+    },
+    {
+      "id": 1024,
+      "name": "조운과아두 Storio SDK 게임 연결",
+      "parent": 13,
+      "code": "SP-26",
+      "assignment": "scheduled",
+      "start": "2026-11-23",
+      "end": "2026-11-29"
     }
   ],
   "sprintGroupOrder": [
@@ -5406,6 +5441,6 @@
     }
   ],
   "publication": {
-    "revision": 64
+    "revision": 67
   }
 }
