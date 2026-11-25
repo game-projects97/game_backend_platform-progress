@@ -40,7 +40,7 @@ jobs:
           PAGES_ARTIFACT_ID: ${{ steps.pages_upload.outputs.artifact_id }}
         run: |
           for attempt in {1..12}; do
-            if gh api --silent "$GITHUB_REPOSITORY/actions/artifacts/$PAGES_ARTIFACT_ID"; then
+            if gh api --silent "repos/$GITHUB_REPOSITORY/actions/artifacts/$PAGES_ARTIFACT_ID"; then
               # 배포 액션의 산출물 목록에도 업로드가 반영될 시간을 준다.
               sleep 5
               exit 0
