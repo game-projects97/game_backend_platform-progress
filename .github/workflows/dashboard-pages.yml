@@ -24,10 +24,11 @@ jobs:
           persist-credentials: false
       - name: 게시 데이터와 자산 확인
         run: node scripts/verify-dashboard.mjs
-      - name: 기존 사이트 구성 보존
+      - name: 작업 대시보드만 공개
         run: |
           mkdir _site
-          cp -a index.html styles.css report-data.json .nojekyll api plan-v2 board _site/
+          cp -a .nojekyll board _site/
+          cp -a board/. _site/
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
         id: pages_upload
         with:
