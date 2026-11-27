@@ -1,13 +1,3 @@
-# Storio Backend Platform 작업현황 대시보드 
+# Storio Backend Platform 작업현황 대시보드
 
-Rust 기반 팀 내부용 관리 서버의 기획·구현·검증 현황을 요약한 공개 보고서입니다.
-
-- 현재 우선: 내부 관리·권한·감사·자료 운영·안정성·복구
-- 현재 제외: 외부 고객 문의 접수·답변·처리
-- 초기 MSA·Gateway·gRPC의 취소 확정은 아닙니다.
-- Android·iOS 빌드 파이프라인은 후속 계획 수립 중이며 구축·검증 전입니다.
-- 기존 기능·검증 이력과 현재 범위를 구분합니다.
-
-제품 소스·사용자 데이터·비밀값·구체적인 내부 V2 기획은 포함하지 않습니다.
-
-기준일: 2026-11-10. `index.html`, `styles.css`, `report-data.json`, `.nojekyll`로 구성한 정적 보고서입니다. 이 페이지 게시가 실제 백엔드 운영 배포를 의미하지 않습니다.
+[공개 작업 대시보드](https://game-projects97.github.io/storio_backend_progress/board/)
