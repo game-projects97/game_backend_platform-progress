@@ -1,4 +1,4 @@
-# Backend Platform Progress
+# Storio Backend Platform 작업현황 대시보드 
 
 Rust 기반 팀 내부용 관리 서버의 기획·구현·검증 현황을 요약한 공개 보고서입니다.
 
