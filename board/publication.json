@@ -1,6 +1,6 @@
 {
   "runtimeSha256": "14c9259fb89bdf31375c389e1ed6daee27f1dcd268f718feee64a9aa74ba6fd4",
-  "revision": 228,
-  "stateSha256": "4d9abd846f0c6b4a0eaf96b4c893f0c2f95fd5fb49217a8619f583b96c21b160",
+  "revision": 230,
+  "stateSha256": "4b8a132c5faf71a2ed6d1a19a51487c6dd41904fc635b2ae5704830906a62635",
   "repository": "game-projects97/storio_backend_progress"
 }
